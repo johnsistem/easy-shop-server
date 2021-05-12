@@ -6,7 +6,8 @@ function authJwt() {
    return expressJwt({
 			secret,
 		algorithms: ["HS256"],
-			isRevoked:isRevoked
+	   //Se comento esta linea de codigo para que le de pase a la autorizacion de los isAdmin=false
+			//isRevoked:isRevoked
 		}).unless({
 			path: [
 				{ url: /\/public\/uploads(.*)/, methods: ["GET", "OPTIONS"] },
